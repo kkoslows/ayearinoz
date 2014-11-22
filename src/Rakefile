@@ -1,0 +1,11 @@
+namespace :build do
+  task :about do
+    ruby "build_about.rb"
+  end
+end
+
+task :default do
+  Rake.application.tasks.each do |task|
+    task.invoke
+  end
+end
