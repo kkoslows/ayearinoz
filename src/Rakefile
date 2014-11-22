@@ -2,6 +2,9 @@ namespace :build do
   task :about do
     ruby "build_about.rb"
   end
+  task :promises do
+    ruby "build_promises.rb"
+  end
 end
 
 task :default do

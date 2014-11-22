@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]><html lang="en-US" class="no-js lt-ie9 lt-ie8 lt-ie7"><![endif]-->
+<!--[if IE 7]><html lang="en-US" class="no-js lt-ie9 lt-ie8"><![endif]-->
+<!--[if IE 8]><html lang="en-US" class="no-js lt-ie9"><![endif]-->
+<!--[if gt IE 8]><!--><html lang="en-US" class="no-js"><!--<![endif]--> 
+<head>
+	<meta charset="UTF-8">
+    <title><%= title %></title>
+
+	<!-- Meta -->
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0">
+    <link rel="shortcut icon" href="<%= ENV['site_url'] %>/images/avatar.png">
+    <link rel="apple-touch-icon" href="<%= ENV['site_url'] %>/images/avatar.png"/>
+
+    <link rel="canonical" href='<%= ENV['site_url'] %>' />
+    <meta property='og:locale' content='en_US'/>
+    <meta property='og:type' content='website'/>
+    <meta property='og:title' content='<%= ENV['site_name'] %>'/>
+    <meta property='og:url' content='<%= ENV['site_url'] %>'/>
+    <meta property='og:site_name' content='<%= ENV['site_name'] %>'/>
+    <meta property='og:description' content='<%= ENV['site_description'] %>'/>
+    <meta name="description"        content="<%= ENV['site_description'] %>"/>
+
+	<!-- CSS + jQuery + JavaScript -->
+    <link rel='stylesheet' id='wp-polls-css'  href='<%= ENV['site_url'] %>/themes/polls-css.css' media='all' />
+<link rel='stylesheet' id='html5blank-css'  href='themes/style.css?ver=1.5' media='all' />
+<script type='text/javascript' src='http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js?ver=1.8.2'></script>
+<script type='text/javascript' src='js/wvgg-ajax-pages.js'></script>
+<script type='text/javascript' src='js/modernizr.js'></script>
+<script type='text/javascript' src='js/scripts.js'></script>
+<style type="text/css">
+.wp-polls .pollbar {
+	margin: 1px;
+	font-size: -2px;
+	line-height: 0px;
+	height: 0px;
+	background: #d8e1eb;
+	border: 1px solid #c8c8c8;
+}
+</style>
+
+</head>
+
+<body class="page page-id-29 page-template-default about">
+
+  <div id="page_min_height">
+
+  	<header id="masthead">
+  	  <div class="wrap">
+          <a href="<%= ENV['site_url'] %>" id="logo" ><%= ENV['site_name'] %></a>
+    		<nav>
+          <ul>
+            <li><a href="<%= ENV['site_url'] %>/about" >About</a></li>
+            <li><a href="<%= ENV['site_url'] %>/promises" >Promises</a></li>
+          </ul>
+    		</nav>
+    	
+  	  </div>
+  	</header>
+  

@@ -5,10 +5,10 @@ require 'yaml'
 require 'cgi'
 require './environment'
 
-input_file = 'templates/about.html.erb'
-output_file = '../about/index.html'
+input_file = 'templates/promises.html.erb'
+output_file = '../promises/index.html'
 
-title = '  About'
+title = '  Our Promises'
 header_html = ERB.new(File.read('templates/header.html.erb')).result(binding)
 
 about_holt = File.read("../content/about/holt.html")
