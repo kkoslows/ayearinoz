@@ -10,6 +10,7 @@ output_file = '../about/index.html'
 
 title = '  About'
 header_html = ERB.new(File.read('templates/header.html.erb')).result(binding)
+footer_html = ERB.new(File.read('templates/footer.html.erb')).result(binding)
 
 about_holt = File.read("../content/about/holt.html")
 about_kristin = File.read("../content/about/kristin.html")
