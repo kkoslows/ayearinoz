@@ -6,7 +6,9 @@ require 'cgi'
 require './environment'
 
 input_file = 'templates/about.html.erb'
-output_file = '../about/index.html'
+output_file = "#{ENV['output_dir']}/about/index.html"
+
+system("mkdir -p #{ENV['output_dir']}/about") or abort("Couldn't create #{ENV['output_dir']}/about")
 
 title = '  About'
 header_html = ERB.new(File.read('templates/header.html.erb')).result(binding)

@@ -6,7 +6,9 @@ require 'cgi'
 require './environment'
 
 input_file = 'templates/promises.html.erb'
-output_file = '../promises/index.html'
+output_file = "#{ENV['output_dir']}/promises/index.html"
+
+system("mkdir -p #{ENV['output_dir']}/promises") or abort("Couldn't create #{ENV['output_dir']}/promises")
 
 title = '  Our Promises'
 header_html = ERB.new(File.read('templates/header.html.erb')).result(binding)

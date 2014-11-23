@@ -1,14 +1,30 @@
 namespace :build do
+  site_url = 'abcd'
   task :about do
     ruby "build_about.rb"
   end
   task :promises do
     ruby "build_promises.rb"
   end
+
+  task :all => [:about, :promises]
 end
 
-task :default do
-  Rake.application.tasks.each do |task|
-    task.invoke
-  end
+task :setup_mac do
+  ruby "setup_mac.rb"
+end
+
+desc "Build ayearinoz to test out on your mac"
+task :test do
+  ENV['site_url'] = 'http://localhost/Blog'
+  ENV['output_dir'] = '/Library/WebServer/Documents/Blog'
+  Rake::Task["setup_mac"].invoke
+  Rake::Task["build:all"].invoke
+end
+
+desc "Build ayearinoz to deploy on the internet"
+task :prod do
+  ENV['site_url'] = 'http://ayearinoz.holtandkristin.com'
+  ENV['output_dir'] = '..'
+  Rake::Task["build:all"].invoke
 end
