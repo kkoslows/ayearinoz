@@ -2,7 +2,7 @@
 <div id="content" >
 
 <% 
-    content.each do |post|
+    content.reverse.each do |post|
       date = post['date']
       payload = post['questions']
       human = post['human']
