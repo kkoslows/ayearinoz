@@ -1,79 +1,31 @@
-<!DOCTYPE html>
-<!--[if lt IE 7]><html lang="en-US" class="no-js lt-ie9 lt-ie8 lt-ie7"><![endif]-->
-<!--[if IE 7]><html lang="en-US" class="no-js lt-ie9 lt-ie8"><![endif]-->
-<!--[if IE 8]><html lang="en-US" class="no-js lt-ie9"><![endif]-->
-<!--[if gt IE 8]><!--><html lang="en-US" class="no-js"><!--<![endif]--> 
-<head>
-	<meta charset="UTF-8">
-    <title>  A Year in OZ</title>
-
-	<!-- Meta -->
-	<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0">
-    <link rel="shortcut icon" href="http://ayearinoz.holtandkristin.com/images/avatar.png">
-    <link rel="apple-touch-icon" href="http://ayearinoz.holtandkristin.com/images/avatar.png"/>
-
-    <link rel="canonical" href='http://ayearinoz.holtandkristin.com' />
-    <meta property='og:locale' content='en_US'/>
-    <meta property='og:type' content='website'/>
-    <meta property='og:title' content='A Year in OZ'/>
-    <meta property='og:url' content='http://ayearinoz.holtandkristin.com'/>
-    <meta property='og:site_name' content='A Year in OZ'/>
-    <meta property='og:description' content='Holt and Kristin had the opportunity to move to Australia for a year, and they decided to do it, and blog about it'/>
-    <meta name="description"        content="Holt and Kristin had the opportunity to move to Australia for a year, and they decided to do it, and blog about it"/>
-
-	<!-- CSS + jQuery + JavaScript -->
-    <link rel='stylesheet' id='wp-polls-css'  href='http://ayearinoz.holtandkristin.com/themes/polls-css.css' media='all' />
-    <link rel='stylesheet' id='html5blank-css'  href='http://ayearinoz.holtandkristin.com/themes/style.css?ver=1.5' media='all' />
-    <script type='text/javascript' src='http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js?ver=1.8.2'></script>
-    <script type='text/javascript' src='http://ayearinoz.holtandkristin.com/js/wvgg-ajax-pages.js'></script>
-    <script type='text/javascript' src='http://ayearinoz.holtandkristin.com/js/modernizr.js'></script>
-    <script type='text/javascript' src='http://ayearinoz.holtandkristin.com/js/scripts.js'></script>
-<style type="text/css">
-.wp-polls .pollbar {
-	margin: 1px;
-	font-size: -2px;
-	line-height: 0px;
-	height: 0px;
-	background: #d8e1eb;
-	border: 1px solid #c8c8c8;
-}
-</style>
-
-</head>
-
-<body class="page page-id-29 page-template-default about">
-
-  <div id="page_min_height">
-
-  	<header id="masthead">
-  	  <div class="wrap">
-          <a href="http://ayearinoz.holtandkristin.com" id="logo" >A Year in OZ</a>
-    		<nav>
-          <ul>
-            <li><a href="http://ayearinoz.holtandkristin.com/about" >About</a></li>
-            <li><a href="http://ayearinoz.holtandkristin.com/promises" >Promises</a></li>
-          </ul>
-    		</nav>
-    	
-  	  </div>
-  	</header>
-  
-
+<%= header_html %>
 <div id="content" >
 
-
-<article id="post-log-one" class="post-5 post type-post status-publish format-standard hentry category-uncategorized" >
+<% 
+    content.each do |post|
+      date = post['date']
+      payload = post['questions']
+      human = post['human']
+      hcap = human.capitalize
+      title = "Log #{hcap}"
+      kristin_banner = "#{ENV['site_url']}/images/log_#{human}/kristin_banner.jpg"
+      holt_banner = "#{ENV['site_url']}/images/log_#{human}/holt_banner.jpg"
+      #href = "#{ENV['site_url']}/log-#{human}"
+      #href = "/log-#{human}"
+      href = "log-#{human}"
+%>
+<article id="post-log-<%= human %>" class="post-5 post type-post status-publish format-standard hentry category-uncategorized" >
     <header>
-        <time>November 02, 2014</time>
-        <a class="permalink" data-scroll_destination="0" href="log-one" id="clicky_5" data-loaded="true" data-id="5">
-            <h1>Log One</h1>
+        <time><%= date %></time>
+        <a class="permalink" data-scroll_destination="0" href="<%= href %>" id="clicky_5" data-loaded="true" data-id="5">
+            <h1><%= title %></h1>
         </a>
     </header>
-    <div class="image loaded" data-src="http://ayearinoz.holtandkristin.com/images/log_one/kristin_banner.jpg" style="background-image:url('http://ayearinoz.holtandkristin.com/images/log_one/kristin_banner.jpg');" >
-        <img class="image_copyable" style="opacity:0;" src="http://ayearinoz.holtandkristin.com/images/log_one/kristin_banner.jpg" data-id="1635">
+    <div class="image loaded" data-src="<%= kristin_banner %>" style="background-image:url('<%= kristin_banner %>');" >
+        <img class="image_copyable" style="opacity:0;" src="<%= kristin_banner %>" data-id="1635">
     </div>
-    <div class="image loaded" data-src="http://ayearinoz.holtandkristin.com/images/log_one/holt_banner.jpg" style="background-image:url('http://ayearinoz.holtandkristin.com/images/log_one/holt_banner.jpg');" >
-        <img class="image_copyable" style="opacity:0;" src="http://ayearinoz.holtandkristin.com/images/log_one/holt_banner.jpg" data-id="1637">
+    <div class="image loaded" data-src="<%= holt_banner %>" style="background-image:url('<%= holt_banner %>');" >
+        <img class="image_copyable" style="opacity:0;" src="<%= holt_banner %>" data-id="1637">
     </div>
 
 
@@ -82,106 +34,39 @@
     	<div class="two_cols">
     		<div class="col first">
       		    <div class="subhead" >
-                    <strong>Log One</strong>
-                
-                    <strong><i>('Futchara' typeface by <a href='https://www.behance.net/gallery/5786587/Futuracha-the-font-free' target='_blank'>Holy</a>)</i></strong>
-                
+                    <strong><%= title %></strong>
+                <% if post['extra'] and post['extra']['kristin'] %>
+                    <strong><i><%= post['extra']['kristin'] %></i></strong>
+                <% end %>
                 </div>
       		    <h2>Kristin</h2>
-                
-             <p><strong><b>You made it! What’s your first reaction?</b><br /></strong>It’s bright and warm. Are those purple trees? Yup, those are purple trees.</p>
-      
-             <p><strong><b>What did you do upon arriving?</b><br /></strong>We immediately went to the home we’ve rented for our year abroad. We're staying in Paddington, which everybody that is familiar with Sydney has said 'Oh, you'll be right in the midst of everything' when we've told them where we would be living.</p>
-      
-             <p><strong><b>Anything particularly different about SYD than from NYC?</b><br /></strong>There are trees everywhere and a variety of birds beyond pigeons. And the smells are divine; honeysuckle is in bloom in our SYD neighborhood and although the smells of NYC aren’t particularly displeasing (hype and traveler’s tales would say it smells like urine, but that’s really just not NYC of 2014), although NYC certainly doesn’t have honeysuckle in bloom as you wander down the streets. The smell is delightfully scintillating.</p>
-      
-             <p><strong><b>Did you handle the jet lag well?</b><br /></strong>I started getting sleeping immediately after eating dinner, for every spoonful of dinner I ate, my eyelids dropped more. I went to be at 8:30pm. I guess I did all right.</p>
-      
-             <p><strong><b>Additional comments?</b><br /></strong>It is bizarre how easy flying makes traveling around the world. Yesterday I was on the beach in front of a bright pink hotel in Florida. Merely +24 hrs and I’m on the other side of the world, starting an entirely new adventure in a foreign country. It’s a little hard to grasp.</p>
-      
+                <% 
+                    payload.each do |question, answers|
+                      answer = answers['kristin']
+                 %>
+             <p><strong><b><%= question %></b><br /></strong><%= answer %></p>
+      <% end %>
       </div>
       <div class="col second">
           <div class="subhead">
-                <strong>Log One</strong>
-                
+                <strong><%= title %></strong>
+                <% if post['extra'] and post['extra']['holt'] %>
+                    <strong><i><%= post['extra']['holt'] %></i></strong>
+                <% end %>
           </div>
       		    <h2>Holt</h2>
-                
-              <p><strong><b>You made it! What’s your first reaction?</b><br /></strong>On the plane during the descent my reaction was wow, it’s beautiful.  The seaside cliffs and beaches and just a sprawling yet still somewhat quaint city.  Then our cab driver is very talkative but also very friendly (which an American expat to Australia had told us many people here were, possibly even friendly to a fault).  The apartment is quite lovely as well, in a beautiful neighborhood full of British-style townhouses.</p>
-      
-              <p><strong><b>What did you do upon arriving?</b><br /></strong>I immediately found the closest coffee shop to the apartment while waiting for the property manager to let us in.  I just left Kristin on the corner of the house with all our luggage while I went to go get coffee.  Priorities.</p>
-      
-              <p><strong><b>Anything particularly different about SYD than from NYC?</b><br /></strong>The drive from the airport to the apartment was much shorter than I was expecting.  It was probably 20 minutes, so not like the long haul you have to make to get out to JFK from Manhattan.  The Paddington neighborhood feels a bit like Brooklyn, though it was extra quiet when we arrived.  I think the quietness was due to us arriving the morning of a weekday so I guess most people in Paddington had left for work already.  Also, we’d been warned that the city might be quiet (except at bars) that day because it was the day of the Melbourne cup horse race.  At the coffee shop at the end of our street, I felt quite at home.  Even though there’s not really drip coffee here, you can get pretty close with their version of a strong Americano, the 'long black'.</p>
-      
-              <p><strong><b>Did you handle the jet lag well?</b><br /></strong>Decently.  Didn’t have any falling asleep in the middle of the day episodes, but definitely went to bed early the first couple of nights.</p>
-      
-              <p><strong><b>Additional comments?</b><br /></strong>Too soon to say.</p>
-      
+                <% 
+                    payload.each do |question, answers|
+                      answer = answers['holt']
+                  %>
+              <p><strong><b><%= question %></b><br /></strong><%= answer %></p>
+      <% end %>
   </div>
   </div>
 </div>
 	
 </article>
-
-<article id="post-log-two" class="post-5 post type-post status-publish format-standard hentry category-uncategorized" >
-    <header>
-        <time>November 10, 2014</time>
-        <a class="permalink" data-scroll_destination="0" href="log-two" id="clicky_5" data-loaded="true" data-id="5">
-            <h1>Log Two</h1>
-        </a>
-    </header>
-    <div class="image loaded" data-src="http://ayearinoz.holtandkristin.com/images/log_two/kristin_banner.jpg" style="background-image:url('http://ayearinoz.holtandkristin.com/images/log_two/kristin_banner.jpg');" >
-        <img class="image_copyable" style="opacity:0;" src="http://ayearinoz.holtandkristin.com/images/log_two/kristin_banner.jpg" data-id="1635">
-    </div>
-    <div class="image loaded" data-src="http://ayearinoz.holtandkristin.com/images/log_two/holt_banner.jpg" style="background-image:url('http://ayearinoz.holtandkristin.com/images/log_two/holt_banner.jpg');" >
-        <img class="image_copyable" style="opacity:0;" src="http://ayearinoz.holtandkristin.com/images/log_two/holt_banner.jpg" data-id="1637">
-    </div>
-
-
-	<br style="clear:both;">
-	<div class="content">
-    	<div class="two_cols">
-    		<div class="col first">
-      		    <div class="subhead" >
-                    <strong>Log Two</strong>
-                
-                </div>
-      		    <h2>Kristin</h2>
-                
-             <p><strong><b>How did you take your coffee this morning?</b><br /></strong>Holt made an aeropress, so a ‘long black’. We sat out on the front balcony and listened to the morning sounds of the neighborhood. As we sipped our coffee, two wild cockatoos landed in a nearby tree. We watched them raise their shockingly yellow headdresses and they then proceeded to pomp and circumstance from branch to branch with their headdresses held proudly. Our nyc pigeons aren't nearly as interesting and the NYC hawks are hard to spot, so that was quite interesting to watch while having brekkie.</p>
-      
-             <p><strong><b>What did you do today?</b><br /></strong>I walked along the coast Bondi Beach to Bronte Beach. As I walked along the little path that snaked around cliffs and beaches, art installations would come in and out of focus. Some of the installations tried to change the way the viewer engaged with the coastline, or reframed your point of view. It was an interesting walk. There’s an amazing looking pool at Bondi Beach called ‘Icebergs.’ I must swim here. It is set into a cliff overlooking the beach and seems to use natural water, or at least, the sea spay comes up and washes into the pool with every roll of the ocean. It looks like heaven.</p>
-      
-             <p><strong><b>Describe an interesting creature or human you saw.</b><br /></strong>On my way to Bondi Beach, I popped into a beautiful airy store called Girl and Graaf. The owners, Lauren and Simon have curated a wonderfully bright collection of textiles, stationary, and objects that are well crafted and deeply connected to the culture and place in which they are produced. I was drawn to a lovely looking book about produce from New South Wales so I could learn about the foods, purveyors, and restaurants that specialize in procuring and serving local ingredients. As I made moves to purchase my guide to local food, Lauren struck up a conversation with me (as Australians tend to genuinely want to make small talk) about Holt and my plan to live in AU for a year as well as places we’d like to visit while here. I mentioned I’d love to visit Bali and Lauren offered a bit of advice on places that were ‘nice’ and places that were ‘gross’. She wrote it down on her store’s postcard and offered it to me.<br />Seminyak – nice<br />Ubud – nice<br />Kuta/Legian – gross<br />Nusa Dua – boring</p>
-      
-             <p><strong><b>Any divine food or beverage experiences?</b><br /></strong>I had pour over from Cabrito Coffee Roasters in the Central Business District (CBD), but it wasn’t what I expected. It was light and not nearly as forceful or caffeinated as I expected a pour over to be. I will be sticking to ordering ‘long blacks’ for my afternoon coffee fix.</p>
-      
-             <p><strong><b>Additional comments?</b><br /></strong>I must swim in that pool!</p>
-      
-      </div>
-      <div class="col second">
-          <div class="subhead">
-                <strong>Log Two</strong>
-                
-          </div>
-      		    <h2>Holt</h2>
-                
-              <p><strong><b>How did you take your coffee this morning?</b><br /></strong>I made an aeropress with the Rushcutter’s blend (from Rushcutter’s just up the street). I then had a long black of allpress espresso that Viktor brought in (not sure from what café), and later met Kristin at Cabrito in the CBD for an afternoon long black.</p>
-      
-              <p><strong><b>What did you do today?</b><br /></strong>Took the bus to Bree, the Palantir Sydney office! Small office (4 desks and a small conference room), but central location in the CBD of Sydney with a great view overlooking the opera house, the bay and the royal botanic gardens. Also over in either Woolloomooloo bay or Elizabeth bay there’s some kind of weird aircraft carrier thingie, which is apparently meant for amphibious troop landings and helicoptors, i.e. it looks like an aircraft carrier but isn’t long enough to be one.</p>
-      
-              <p><strong><b>Describe an interesting creature or human you saw.</b><br /></strong>I saw several Australian white ibis birds in the park at lunch, and several cockatoos outside of the balcony at the apartment in the morning (both the cockatoos and the ibis seem fairly common, and of course the magpies are as well).</p>
-      
-              <p><strong><b>Any divine food or beverage experiences?</b><br /></strong>Coffee is just really good here. Lunch was also excellent, if a bit larger than we were expecting. I got one of the Japanese “lunch box” lunches that had excellent tonkatsu, sashimi and miso soup.</p>
-      
-              <p><strong><b>Additional comments?</b><br /></strong>I got a first-hand experience in how expensive things are here by buying running shoes at a sports store for literally $30 more than they would have been in NY. I know this, because we looked up the exact shoe online later, so I’m not exaggerating.</p>
-      
-  </div>
-  </div>
-</div>
-	
-</article>
-
+<% end %>
     	
 <article id="post-day-two" class="post-18 post type-post status-publish format-standard hentry category-uncategorized" >
 
@@ -410,26 +295,4 @@ One of the more striking pieces he created was of a man hanging, obviously he re
       
 </div>
 
-  	<footer id="footer">
-  		<div class="wrap">
-    		<p>&copy; 2014/2015 KK &amp; HW</p>
-    		<ul>
-              <li><a class="ss-icon" target="_blank" href="http://www.facebook.com/holtwilkins">HW Facebook</a></li>
-              <li><a class="ss-icon" target="_blank" href="http://www.facebook.com/kristinkoslowski">KK Facebook</a></li>
-    		</ul>
-  		</div>
-  	</footer>
-
-  <#% closing the div opened in header.html.erb >
-  </div>
-
-	<div id="mobile_portrait"></div>
-	
-    <!-- Protocol Relative jQuery fall back if Google CDN offline --><script type='text/javascript' src='http://ayearinoz.holtandkristin.com/js/comment-reply.min.js?ver=3.9.2'></script>
-<script type='text/javascript'>
-</script>
-<script type='text/javascript' src='http://ayearinoz.holtandkristin.com/js/polls-js.js'></script>
-
-</body>
-</html>
-
+<%= footer_html %>

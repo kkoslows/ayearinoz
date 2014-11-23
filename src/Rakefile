@@ -6,8 +6,11 @@ namespace :build do
   task :promises do
     ruby "build_promises.rb"
   end
+  task :main do
+    ruby "build_main.rb"
+  end
 
-  task :all => [:about, :promises]
+  task :all => [:about, :promises, :main]
 end
 
 task :setup_mac do
