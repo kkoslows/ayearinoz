@@ -502,38 +502,6 @@ h3 {
         transition:opacity 0.2s ease-in;
       }
         .image.loaded {opacity:1;}
-        #cell_1950 {
-          background-size:270px 1200px !important; 
-          background-image:url('/wp-content/uploads/2013/03/lifeworkj.jpg'); 
-          background-position:center 0px;
-        }
-        #cell_2566 {
-          background-size:270px 540px !important; 
-          background-image:url('/wp-content/uploads/2013/07/five.jpg'); 
-          background-position:center 0px;
-        }
-        #cell_4670 {
-          background-size:270px 1200px !important; 
-          background-image:url('/wp-content/uploads/2013/04/8frames.jpg');
-          background-position:center 0px;  
-        }
-        #cell_3463 {
-          background-image:url('http://fortydaysofdating.com/wp-content/uploads/2013/07/25_bw.gif'),
-            url('http://fortydaysofdating.com/wp-content/uploads/2013/07/25_bg.jpg') !important;
-        }
-        #cell_5312 {
-          background-image:url('http://fortydaysofdating.com/wp-content/uploads/2013/04/JCuster_n.gif'),
-            url('http://fortydaysofdating.com/wp-content/uploads/2013/04/jcuster_yellow.jpg') !important;
-        }
-        #cell_3775, #cell_3459 {
-          background-image:url('http://fortydaysofdating.com/wp-content/uploads/2013/07/balloon_5-1.gif'),
-            url('http://fortydaysofdating.com/wp-content/uploads/2013/07/balloon_bg.jpg') !important;
-        }
-        #cell_5347 {
-          background-size:270px 1498px !important; 
-          background-image:url('/wp-content/uploads/2013/04/day40_1.jpg') !important;
-          background-position:center 0px;  
-        }
   
       section, .wrap {
         position:relative;
