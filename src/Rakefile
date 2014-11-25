@@ -1,5 +1,7 @@
 namespace :build do
-  site_url = 'abcd'
+  #task :sanitize do
+    #system('find ..
+  #end
   task :about do
     ruby "build_about.rb"
   end
