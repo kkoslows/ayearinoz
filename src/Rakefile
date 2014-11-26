@@ -2,6 +2,9 @@ namespace :build do
   #task :sanitize do
     #system('find ..
   #end
+  task :output_setup do
+    ruby "output_setup.rb"
+  end
   task :about do
     ruby "build_about.rb"
   end
@@ -12,7 +15,7 @@ namespace :build do
     ruby "build_main.rb"
   end
 
-  task :all => [:about, :promises, :main]
+  task :all => [:output_setup, :about, :promises, :main]
 end
 
 task :setup_mac do
@@ -27,9 +30,9 @@ task :test do
   Rake::Task["build:all"].invoke
 end
 
-desc "Build ayearinoz to deploy on the internet"
+desc "Build ayearinoz and deploy on the internet"
 task :prod do
   ENV['site_url'] = 'http://ayearinoz.holtandkristin.com'
-  ENV['output_dir'] = '..'
+  ENV['output_dir'] = '/tmp/ayearinoz/'
   Rake::Task["build:all"].invoke
 end

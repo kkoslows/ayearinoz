@@ -37,8 +37,3 @@ if !result or owner_id != my_id
   system("sudo mkdir -p #{ENV['output_dir']}") or abort("Couldn't create #{ENV['output_dir']}")
   system("sudo chown -R #{ENV['USER']} #{ENV['output_dir']}") or abort("Couldn't chown #{ENV['output_dir']}")
 end
-
-system("rm -rf #{ENV['output_dir']}/*") or abort("Couldn't delete old Blog folder")
-system("cp -r ../images #{ENV['output_dir']}/") or abort("Couldn't copy images")
-system("cp -r ../themes #{ENV['output_dir']}/") or abort("Couldn't copy images")
-system("cp -r ../js #{ENV['output_dir']}/") or abort("Couldn't copy images")
