@@ -33,6 +33,8 @@ end
 desc "Build ayearinoz and deploy on the internet"
 task :prod do
   ENV['site_url'] = 'http://ayearinoz.holtandkristin.com'
-  ENV['output_dir'] = '/tmp/ayearinoz/'
+  ENV['output_dir'] = '/tmp/ayearinoz'
   Rake::Task["build:all"].invoke
+  puts "TO COPY TO THE HOSTING PROVIDER:"
+  puts 'lftp -u holtcmto,\'????\' -p 21098 -e \'mirror -c -e -R ' + ENV['output_dir'] + ' public_html/ayearinoz\' sftp://server111.web-hosting.com'
 end
