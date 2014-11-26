@@ -405,7 +405,7 @@ h3 {
     position:absolute;
     left:0px;
     top:125px;
-    background-image:url('images/spinny_phoney.png');
+    background-image:url('../images/spinny_phoney.png');
     background-size:250px 204px;
     background-position:center;
     background-repeat:no-repeat;
