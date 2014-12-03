@@ -52,8 +52,11 @@
 </script>
 
 </head>
-
+<% if ! body_class %>
 <body class="page page-id-29 page-template-default about">
+<% else %>
+<body class="<%= body_class %>">
+<% end %>
 
   <div id="page_min_height">
 

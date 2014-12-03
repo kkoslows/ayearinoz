@@ -2,7 +2,7 @@
 <div id="content" >
 
 <% 
-    content.each do |post|
+    content.reverse.each do |post|
       date = post['date']
       payload = post['questions']
       human = post['human']
@@ -14,23 +14,28 @@
       #href = "/log-#{human}"
       href = "log-#{human}"
 %>
-<article id="post-log-<%= human %>" class="post-5 post type-post status-publish format-standard hentry category-uncategorized" >
+<article id="post-log-<%= human %>" class="post-<%= human %> post type-post status-publish format-standard hentry category-uncategorized" >
     <header>
         <time><%= date %></time>
-        <a class="permalink" data-scroll_destination="0" href="<%= href %>" id="clicky_5" data-loaded="true" data-id="5">
+        <% if loc_name == human or ! loc_name %>
+        <a class="permalink" data-scroll_destination="0" href="<%= href %>" id="clicky_<%= human %>" data-loaded="true" data-id="<%= human %>">
+        <% else %>
+        <a class="permalink" data-scroll_destination="0" href="<%= href %>" id="clicky_<%= human %>" data-loaded="false" data-id="<%= human %>">
+        <% end %>
             <h1><%= title %></h1>
         </a>
     </header>
     <div class="image loaded" data-src="<%= kristin_banner %>" style="background-image:url('<%= kristin_banner %>');" >
-        <img class="image_copyable" style="opacity:0;" src="<%= kristin_banner %>" data-id="1635">
+        <img class="image_copyable" style="opacity:0;" src="<%= kristin_banner %>">
     </div>
     <div class="image loaded" data-src="<%= holt_banner %>" style="background-image:url('<%= holt_banner %>');" >
-        <img class="image_copyable" style="opacity:0;" src="<%= holt_banner %>" data-id="1637">
+        <img class="image_copyable" style="opacity:0;" src="<%= holt_banner %>">
     </div>
 
 
 	<br style="clear:both;">
 	<div class="content">
+<% if loc_name == human or ! loc_name %>
     	<div class="two_cols">
     		<div class="col first">
       		    <div class="subhead" >
@@ -63,9 +68,23 @@
       <% end %>
   </div>
   </div>
+<% else %>
+      <div class="two_cols"></div>
+<% end %>
 </div>
 	
 </article>
+<% end %>
+
+<% if loc_name %>
+<script type="text/javascript">
+  // open requested page
+  $(function() {
+
+    $('#clicky_<%= loc_name %>').click();
+
+  });
+</script>
 <% end %>
     	
 <%= footer_html %>
