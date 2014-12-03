@@ -6,9 +6,7 @@ require 'cgi'
 require './environment'
 
 input_file = 'templates/about.html.erb'
-output_file = "#{ENV['output_dir']}/about/index.html"
-
-system("mkdir -p #{ENV['output_dir']}/about") or abort("Couldn't create #{ENV['output_dir']}/about")
+output_file = "#{ENV['output_dir']}/about.html"
 
 title = '  About'
 body_class = false
