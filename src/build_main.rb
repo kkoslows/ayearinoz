@@ -43,5 +43,8 @@ header_html = ERB.new(File.read('templates/header.html.erb')).result(binding)
 erb = ERB.new(File.read(input_file))
 File.write(output_file, erb.result(binding))
 
+# Generate RSS Feed
+input_file = 'templates/rss.xml.erb'
+output_file = "#{ENV['output_dir']}/rss.xml"
 erb = ERB.new(File.read(input_file))
 File.write(output_file, erb.result(binding))
