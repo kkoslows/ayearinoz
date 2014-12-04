@@ -11,17 +11,17 @@
       kristin_banner = "#{ENV['site_url']}/images/log_#{human}/kristin_banner.jpg"
       holt_banner = "#{ENV['site_url']}/images/log_#{human}/holt_banner.jpg"
       #href = "#{ENV['site_url']}/log-#{human}"
-      href = "log-#{human}"
-      #href = "#{ENV['site_url']}/log-#{human}"
+      #href = "log-#{human}"
+      href = "/log-#{human}"
 %>
 <article id="post-log-<%= human %>" class="post-<%= human %> post type-post status-publish format-standard hentry category-uncategorized" >
     <header>
         <time><%= date %></time>
-        <% if loc_name == human or ! loc_name %>
+  <% if loc_name == human or ! loc_name %>
         <a class="permalink" data-scroll_destination="0" href="<%= href %>" id="clicky_<%= human %>" data-loaded="true" data-id="<%= human %>">
-        <% else %>
+  <% else %>
         <a class="permalink" data-scroll_destination="0" href="<%= href %>" id="clicky_<%= human %>" data-loaded="false" data-id="<%= human %>">
-        <% end %>
+  <% end %>
             <h1><%= title %></h1>
         </a>
     </header>

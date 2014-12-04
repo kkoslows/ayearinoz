@@ -13,13 +13,15 @@
       title = "A Year in OZ - Log #{human}"
       desc = post['desc']
       date = post['date']
+      kristin_banner = "#{ENV['site_url']}/images/log_#{human}/kristin_banner.jpg"
+      holt_banner = "#{ENV['site_url']}/images/log_#{human}/holt_banner.jpg"
       href = "log-#{human}"
       j=j+1
 %>
   <item>
     <title><%= title %></title>
     <link><%= ENV['site_url'] %>/<%= href %></link>
-    <description><%= desc %></description>
+    <description><img src="<%= kristin_banner %>" /><img src="<%= holt_banner %>" /><%= desc %></description>
   </item>
 <% end %>
 </channel>
