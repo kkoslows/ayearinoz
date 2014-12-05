@@ -25,7 +25,10 @@ end
 i = 0
 while i < numfiles
   loc_name = $numbers[i]
-  output_file = "#{ENV['output_dir']}/log-#{loc_name}.html"
+  loc_output = "#{ENV['output_dir']}/log-#{loc_name}"
+  system("mkdir -p #{loc_output}") or abort("Couldn't create #{loc_output}")
+  output_file = "#{loc_output}/index.html"
+  #output_file = "#{ENV['output_dir']}/log-#{loc_name}.html"
   title = "  A Year in OZ - Log #{loc_name}"
   body_class = "single single-post postid-#{loc_name} single-format-standard log-#{loc_name}"
   header_html = ERB.new(File.read('templates/header.html.erb')).result(binding)

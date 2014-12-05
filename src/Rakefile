@@ -24,8 +24,8 @@ end
 
 desc "Build ayearinoz to test out on your mac"
 task :test do
-  ENV['site_url'] = 'http://localhost/Blog'
-  ENV['output_dir'] = '/Library/WebServer/Documents/Blog'
+  ENV['site_url'] = 'http://localhost'
+  ENV['output_dir'] = '/Library/WebServer/Documents'
   Rake::Task["setup_mac"].invoke
   Rake::Task["build:all"].invoke
 end
