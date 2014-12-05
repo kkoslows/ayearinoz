@@ -139,13 +139,14 @@ $(document).ready(function() {
     var $this = $(this);
     if(!$this.data('loaded')) {
       // load page via ajax
-      $.ajax({
-        url:'/dynamic_load/' + $this.data('id'),
-        success:function(r) {
-          $this.closest('article').find('.content').html(r);
-          open_post($this);
-        }
-      });
+      window.location.href = '/log-' + $this.data('id');
+      // $.ajax({
+      //   url:'/dynamic_load/' + $this.data('id'),
+      //   success:function(r) {
+      //     $this.closest('article').find('.content').html(r);
+      //     open_post($this);
+      //   }
+      // });
     } else {
       // open cell
       open_post($this);
