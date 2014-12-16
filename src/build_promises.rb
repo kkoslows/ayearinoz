@@ -6,7 +6,8 @@ require 'cgi'
 require './environment'
 
 input_file = 'templates/promises.html.erb'
-output_file = "#{ENV['output_dir']}/promises.html"
+system("mkdir -p #{ENV['output_dir']}/promises") or abort("Couldn't create #{ENV['output_dir']}/promises")
+output_file = "#{ENV['output_dir']}/promises/index.html"
 
 title = '  Our Promises'
 body_class = false
